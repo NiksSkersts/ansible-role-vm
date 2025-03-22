@@ -1,0 +1,11 @@
+---
+
+- name: Creating Users
+  loop: "{{ user_defs }}"
+  when: user_defs is defined and user_defs | length > 0
+  ansible.builtin.include_tasks: "create_linux_user.yml"
+
+- name: Installing packages
+  ansible.builtin.package:
+    name: '{{ pkgs }}'
+    state: present

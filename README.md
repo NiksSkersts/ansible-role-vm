@@ -6,16 +6,19 @@ Setup VM using Ansible
 Requirements
 ------------
 
+```
 collections:
 
   - name: 'ansible.posix'
     version: '*'
+```
 
 Role Variables
 --------------
 
 EXAMPLE:
 
+```
 user_defs:
  - user1:
    user: user1
@@ -40,7 +43,7 @@ pkgs:
   - htop
   - ncdu
   - qemu-guest-agent
-
+```
 
 Dependencies
 ------------
@@ -50,7 +53,8 @@ None, yet.
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+```
 
     - hosts: servers
       roles:
@@ -84,6 +88,7 @@ Including an example of how to use your role (for instance, with variables passe
         - htop
         - ncdu
         - qemu-guest-agent
+```
 
 License
 -------
@@ -94,4 +99,5 @@ Author Information
 ------------------
 
 Niks Skersts
+
 Email: mail@nikssk.id.lv

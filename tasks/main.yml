@@ -2,7 +2,7 @@
 
 - name: Mount drives
   vars:
-    non_boot_disks: "{{ hostvars[inventory_hostname].diskn | rejectattr('id', 'equalto', 1) | list }}"
+    non_boot_disks: "{{ hostvars[inventory_hostname].diskn | rejectattr('id', 'equalto', 1) | list | default(omit)}}"
   when: non_boot_disks | length > 0
   block:
 

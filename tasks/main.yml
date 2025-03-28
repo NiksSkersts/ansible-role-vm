@@ -3,6 +3,7 @@
 - name: Mount drives
   vars:
     non_boot_disks: "{{ hostvars[inventory_hostname].diskn | rejectattr('id', 'equalto', 1) | list }}"
+  when: non_boot_disks | length > 0
   block:
 
     - name: "Ensure filesystem on non-boot disk(s)"
